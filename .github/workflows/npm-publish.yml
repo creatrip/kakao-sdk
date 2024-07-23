@@ -1,0 +1,24 @@
+name: NPM PUBLISH
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - run: npm install
+      - run: npm run build
+      - run: cp ./package.json ./dist/package.json
+      - run: cp ./package-lock.json ./dist/package-lock.json
+      - run: cp ../README.md ./dist/README.md
+      - run: cp ../LICENSE ./dist/LICENSE
+      - run: cp ../SECURITY.md ./dist/SECURITY.md
+      - run: cd dist && npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,34 @@
+commitizen:
+  name: cz_customize
+  customize:
+    questions:
+      - choices:
+          - name: 기능 추가
+            value: feat
+          - name: 버그 수정
+            value: fix
+          - name: 기존 기능 개선
+            value: enhance
+          - name: 리팩토링
+            value: refactor
+          - name: 문서 관련
+            value: docs
+          - name: 테스트 코드 관련
+            value: test
+          - name: 기타
+            value: etc
+        message: '어떤 유형의 변경인가요?'
+        name: type
+        type: list
+      - message: '변경 내용을 50자 이내로 요약해주세요:'
+        name: subject
+        type: text
+      - message: '변경 이유를 작성해주세요:'
+        name: body
+        type: text
+        multiline: true
+
+    message_template: |
+      {{ type }}: {{ subject }}
+        
+      {{ body }}

@@ -1,0 +1,26 @@
+{
+  "name": "@creatrip/kakao-sdk",
+  "version": "0.1.0",
+  "description": "Kakao SDK for Node.js",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/creatrip/kakao-sdk"
+  },
+  "keywords": [
+    "sdk",
+    "kakao"
+  ],
+  "bugs": {
+    "url": "https://github.com/creatrip/kakao-sdk/issues"
+  },
+  "homepage": "https://github.com/creatrip/kakao-sdk",
+  "author": "creatrip",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4"
+  }
+}
