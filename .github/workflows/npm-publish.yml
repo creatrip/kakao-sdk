@@ -16,9 +16,6 @@ jobs:
       - run: npm run build
       - run: cp ./package.json ./dist/package.json
       - run: cp ./package-lock.json ./dist/package-lock.json
-      - run: cp ../README.md ./dist/README.md
-      - run: cp ../LICENSE ./dist/LICENSE
-      - run: cp ../SECURITY.md ./dist/SECURITY.md
       - run: cd dist && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
