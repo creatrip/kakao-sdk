@@ -3,6 +3,8 @@ import { SearchKeywordOutput } from './keyword.output';
 
 /**
  * 키워드로 장소 검색하기
+ *
+ * @link https://developers.kakao.com/docs/latest/ko/local/dev-guide#search-by-keyword
  */
 export async function searchKeyword(
   restApiKey: string,
