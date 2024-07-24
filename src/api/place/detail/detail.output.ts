@@ -39,8 +39,8 @@ export interface PlaceDetailOutput {
       scoresum: number;
       scorecnt: number;
     };
-    openHour: {
-      periodList: {
+    openHour?: {
+      periodList?: {
         periodName: string;
         timeList: {
           timeName: string;
@@ -48,7 +48,7 @@ export interface PlaceDetailOutput {
           dayOfWeek: string;
         }[];
       }[];
-      realtime: {
+      realtime?: {
         holiday: string;
         breaktime: string;
         open: string;
@@ -64,6 +64,12 @@ export interface PlaceDetailOutput {
         };
         closedToday: string;
       };
+      offdayList?: {
+        holidayName: string;
+        weekAndDay: string;
+        temporaryHolidays: string;
+      }[];
+      openhourDisplayText?: string;
     };
     operationInfo: { appointment: string };
     source: { date: string };
